@@ -1,19 +1,15 @@
-# TCP File Transfer with Speed Calculation (Java)
+# TCP File Transfer with Speed Calculation
 
 ---
 
 ## 📋 Table of Contents
-1. [About](#project-overview)
-2. [Description](#task-description)
+1. [About](#about)
+2. [Description](#description)
 3. [Requirements](#requirements)
 4. [Algorithm](#algorithm)
 5. [Bash Example](#bash-example)
-6. [Client Code](#client-code)
-7. [Server Code](#server-code)
-8. [Technologies Used](#technologies-used)
-9. [License](#license)
+6. [License](#license)
 
----
 
 ## About
 
@@ -68,3 +64,11 @@ java Server 8080
 # Run the client (example with server IP 127.0.0.1 and file to send)
 java Client.java 127.0.0.1 8080 file.txt
 ```
+
+##License
+
+   - Badges: Links have been updated to point to the GitHub repository for the Java project.
+   - Table of Contents: Includes hyperlinks for navigating through the sections of the README.md.
+   - Bash Example: Provides command examples for compiling and running the client and server programs in Java.
+   - Code: Example of Java client and server code implementing file transfer over TCP.
+To configure the badges, replace your-username/tcp-file-transfer-java with the actual parameters of your repository.
