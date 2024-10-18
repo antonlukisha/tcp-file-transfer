@@ -1,18 +1,10 @@
 # TCP File Transfer with Speed Calculation (Java)
 
-<p align="center">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/your-username/tcp-file-transfer-java?style=for-the-badge">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/your-username/tcp-file-transfer-java?style=for-the-badge">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/your-username/tcp-file-transfer-java?style=for-the-badge">
-  <img alt="GitHub stars" src="https://img.shields.io/github/stars/your-username/tcp-file-transfer-java?style=for-the-badge">
-  <img alt="GitHub forks" src="https://img.shields.io/github/forks/your-username/tcp-file-transfer-java?style=for-the-badge">
-</p>
-
 ---
 
 ## 📋 Table of Contents
-1. [Project Overview](#project-overview)
-2. [Task Description](#task-description)
+1. [About](#project-overview)
+2. [Description](#task-description)
 3. [Requirements](#requirements)
 4. [Algorithm](#algorithm)
 5. [Bash Example](#bash-example)
@@ -23,11 +15,11 @@
 
 ---
 
-## Project Overview
+## About
 
 This project implements a TCP-based file transfer system in Java. The system allows a client to send a file to a server while the server logs the transfer speed in real-time. The server can handle multiple clients simultaneously using threads and measures both instantaneous and average transfer speed during the session.
 
-## Task Description
+## Description
 
 The goal is to develop a custom protocol for transferring files over TCP. The client sends the file name, size, and content to the server, and the server saves the file in its `uploads` directory. The server calculates the transfer speed and outputs it to the console every 3 seconds. Once the transfer is complete, the server verifies the file size and notifies the client of the success or failure.
 
