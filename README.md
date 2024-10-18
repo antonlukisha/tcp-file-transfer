@@ -1,11 +1,11 @@
-# TCP File Transfer with Speed Calculation
+# TCP File Transfer with Speed Calculation (Java)
 
 <p align="center">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/your-username/tcp-file-transfer?style=for-the-badge">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/your-username/tcp-file-transfer?style=for-the-badge">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/your-username/tcp-file-transfer?style=for-the-badge">
-  <img alt="GitHub stars" src="https://img.shields.io/github/stars/your-username/tcp-file-transfer?style=for-the-badge">
-  <img alt="GitHub forks" src="https://img.shields.io/github/forks/your-username/tcp-file-transfer?style=for-the-badge">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/your-username/tcp-file-transfer-java?style=for-the-badge">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/your-username/tcp-file-transfer-java?style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/your-username/tcp-file-transfer-java?style=for-the-badge">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/your-username/tcp-file-transfer-java?style=for-the-badge">
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/your-username/tcp-file-transfer-java?style=for-the-badge">
 </p>
 
 ---
@@ -25,51 +25,54 @@
 
 ## Project Overview
 
-The TCP File Transfer project aims to create a client-server system that transfers files from one computer to another, tracking the transfer speed in real-time. The server logs both instantaneous and average speed and supports multiple clients simultaneously.
+This project implements a TCP-based file transfer system in Java. The system allows a client to send a file to a server while the server logs the transfer speed in real-time. The server can handle multiple clients simultaneously using threads and measures both instantaneous and average transfer speed during the session.
 
 ## Task Description
 
-The goal is to develop a custom file transfer protocol using TCP, where the server receives the file, saves it in the `uploads` directory, and logs the speed. Clients and servers communicate using this protocol, allowing for efficient data transmission and speed monitoring.
+The goal is to develop a custom protocol for transferring files over TCP. The client sends the file name, size, and content to the server, and the server saves the file in its `uploads` directory. The server calculates the transfer speed and outputs it to the console every 3 seconds. Once the transfer is complete, the server verifies the file size and notifies the client of the success or failure.
 
 ## Requirements
 
 1. **Client**
-   - Sends file metadata (name, size) and file content.
-   - Receives confirmation from the server on successful/failed transfer.
+   - Sends the file name, file size, and its contents.
+   - Receives confirmation from the server after successful/failed file transfer.
 
 2. **Server**
-   - Receives multiple clients using threads.
-   - Calculates the speed of data transfer every 3 seconds for each client.
-   - Verifies the file size and notifies the client about the transfer result.
+   - Receives multiple client connections using threads.
+   - Logs the transfer speed every 3 seconds for each client.
+   - Verifies the file size and sends success/failure result to the client.
 
-3. **Both**
-   - Properly release all OS resources when no longer needed.
+3. **General**
+   - Uses TCP for communication.
+   - Handles multiple clients concurrently.
+   - Releases all system resources correctly after use.
 
 ## Algorithm
 
 ### Client
-1. Connects to the server using a TCP connection.
-2. Sends file name, size, and content.
-3. Waits for server confirmation.
+1. Connects to the server using a TCP socket.
+2. Sends the file name, size, and its contents.
+3. Waits for the server to confirm whether the transfer was successful or not.
 
 ### Server
-1. Waits for incoming client connections.
+1. Waits for incoming connections from clients.
 2. For each client:
-   - Receives file metadata and content.
-   - Saves the file and logs the transfer speed.
+   - Receives the file name, size, and content.
+   - Saves the file in the `uploads` directory.
+   - Logs the transfer speed every 3 seconds (or earlier if the transfer finishes).
    - Verifies the size and sends the result to the client.
 
 ## Bash Example
 
-To compile and run the server and client:
+To compile and run the server and client using the command line:
 
 ```bash
-# Compile both programs
-g++ -o server server.cpp -pthread
-g++ -o client client.cpp
+# Compile the Java files
+javac Server.java Client.java
 
-# Start the server (example with port 8080)
-./server 8080
+# Run the server (example with port 8080)
+java Server 8080
 
-# Start the client (example with server IP 127.0.0.1 and file to send)
-./client 127.0.0.1 8080 path/to/file.txt
+# Run the client (example with server IP 127.0.0.1 and file to send)
+java Client.java 127.0.0.1 8080 file.txt
+```
