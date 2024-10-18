@@ -2,24 +2,18 @@
 
 ---
 
-## 📋 Table of Contents
-1. [About](#about)
-2. [Description](#description)
-3. [Requirements](#requirements)
-4. [Algorithm](#algorithm)
-5. [Bash Example](#bash-example)
-6. [License](#license)
+[About](#about) | [Description](#description) | [Requirements](#requirements) | [Algorithm](#algorithm) | [Bash Example](#bash-example) | [License](#license)
 
 
-## About
+## :dart: About
 
 This project implements a TCP-based file transfer system in Java. The system allows a client to send a file to a server while the server logs the transfer speed in real-time. The server can handle multiple clients simultaneously using threads and measures both instantaneous and average transfer speed during the session.
 
-## Description
+## :pencil2: Description
 
 The goal is to develop a custom protocol for transferring files over TCP. The client sends the file name, size, and content to the server, and the server saves the file in its `uploads` directory. The server calculates the transfer speed and outputs it to the console every 3 seconds. Once the transfer is complete, the server verifies the file size and notifies the client of the success or failure.
 
-## Requirements
+## :open_file_folder: Requirements
 
 1. **Client**
    - Sends the file name, file size, and its contents.
@@ -35,14 +29,14 @@ The goal is to develop a custom protocol for transferring files over TCP. The cl
    - Handles multiple clients concurrently.
    - Releases all system resources correctly after use.
 
-## Algorithm
+## :triangular_ruler: Algorithm
 
-### Client
+### :handbag: Client
 1. Connects to the server using a TCP socket.
 2. Sends the file name, size, and its contents.
 3. Waits for the server to confirm whether the transfer was successful or not.
 
-### Server
+### :office: Server
 1. Waits for incoming connections from clients.
 2. For each client:
    - Receives the file name, size, and content.
@@ -50,7 +44,7 @@ The goal is to develop a custom protocol for transferring files over TCP. The cl
    - Logs the transfer speed every 3 seconds (or earlier if the transfer finishes).
    - Verifies the size and sends the result to the client.
 
-## Bash Example
+## :paperclip: Bash Example
 
 To compile and run the server and client using the command line:
 
@@ -65,10 +59,9 @@ java Server 8080
 java Client.java 127.0.0.1 8080 file.txt
 ```
 
-##License
+## :page_with_curl: License
 
    - Badges: Links have been updated to point to the GitHub repository for the Java project.
-   - Table of Contents: Includes hyperlinks for navigating through the sections of the README.md.
    - Bash Example: Provides command examples for compiling and running the client and server programs in Java.
    - Code: Example of Java client and server code implementing file transfer over TCP.
 To configure the badges, replace your-username/tcp-file-transfer-java with the actual parameters of your repository.
