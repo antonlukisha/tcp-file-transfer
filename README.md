@@ -1,6 +1,5 @@
 # TCP File Transfer with Speed Calculation
 
----
 
 [About](#about) | [Description](#description) | [Requirements](#requirements) | [Algorithm](#algorithm) | [Bash Example](#bash-example) | [License](#license)
 
