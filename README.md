@@ -1,7 +1,7 @@
 # TCP File Transfer with Speed Calculation
 
 
-[About](#about) | [Description](#description) | [Requirements](#requirements) | [Algorithm](#algorithm) | [Bash Example](#bash-example) | [License](#license)
+[About](#dart-about) | [Description](#pencil2-description) | [Requirements](#open_file_folder-requirements) | [Algorithm](#triangular_ruler-algorithm) | [Bash Example](#paperclip-bash-example) | [License](#page_with_curl-license)
 
 
 ## :dart: About
